@@ -1,50 +1,54 @@
-class Igreja {
-    var nome: String
-    var pastor: [Membro]?
-    var presbitero: [Membro]?
-    var obreiro: [Membro]?
-    var membro: [Membro]?
-    var endereco: Endereco
-    init(nome: String, pastor:[Membro]?, presbitero:[Membro]?, obreiro:[Membro]?, membro:[Membro]?, endereco:Endereco) {
-        self.membro = membro
-        self.obreiro = obreiro
-        self.presbitero = presbitero
-        self.pastor = pastor
-        self.nome = nome
-        self.endereco = endereco
-    }
-}
-class Pessoa {
-    var nome: String
-    var idade: Int
-    var CPF: String
-    var endereco: Endereco
-    init(nome: String, idade: Int,CPF: String,endereco: Endereco) {
-        self.nome = nome
-        self.idade = idade
-        self.CPF = CPF
-        self.endereco = endereco
-    }
+   
+   class Igreja {
+        var nome: String
+        var pastor: [Membro]?
+        var presbitero: [Membro]?
+        var obreiro: [Membro]?
+        var membro: [Membro]?
+        var endereco: Endereco
+        init(nome: String, pastor:[Membro]?, presbitero:[Membro]?, obreiro:[Membro]?, membro:[Membro]?, endereco:Endereco) {
+            self.membro = membro
+            self.obreiro = obreiro
+            self.presbitero = presbitero
+            self.pastor = pastor
+            self.nome = nome
+            self.endereco = endereco
+        }
 }
 
-class Endereco {
-    var rua: String
-    var CEP: String
-    var complemento: String
-    init(rua: String,CEP: String, complemento: String) {
-        self.rua = rua
-        self.CEP = CEP
-        self.complemento = complemento
-    }
+    class Pessoa {
+        var nome: String
+        var idade: Int
+        var CPF: String
+        var endereco: Endereco
+        init(nome: String, idade: Int,CPF: String,endereco: Endereco) {
+            self.nome = nome
+            self.idade = idade
+            self.CPF = CPF
+            self.endereco = endereco
+            
+        }
 }
 
-class Membro: Pessoa {
-    var carteirinha: String
-        init(nome: String, idade: Int, CPF: String, endereco: Endereco,carteirinha: String) {
-        self.carteirinha = carteirinha
-        super.init(nome: nome, idade: idade, CPF: CPF, endereco: endereco)
-    }
+    class Endereco {
+        var rua: String
+        var CEP: String
+        var complemento: String
+        init(rua: String,CEP: String, complemento: String) {
+            self.rua = rua
+            self.CEP = CEP
+            self.complemento = complemento
+        }
+        
 }
+
+    class Membro: Pessoa {
+        var carteirinha: String
+            init(nome: String, idade: Int, CPF: String, endereco: Endereco,carteirinha: String) {
+            self.carteirinha = carteirinha
+            super.init(nome: nome, idade: idade, CPF: CPF, endereco: endereco)
+        }
+    }
 
 
 class Impressora {
@@ -67,9 +71,9 @@ class Impressora {
     }
    private func imprimirEnderecoIgreja (igrejaEndereco: Igreja)  {
     
-    print(igrejaEndereco.endereco.rua)
-    print(igrejaEndereco.endereco.CEP)
-    print(igrejaEndereco.endereco.complemento)
+    print("RUA:",igrejaEndereco.endereco.rua)
+    print("CEP:",igrejaEndereco.endereco.CEP)
+    print("COMPLEMENTO:",igrejaEndereco.endereco.complemento)
     
     }
     
